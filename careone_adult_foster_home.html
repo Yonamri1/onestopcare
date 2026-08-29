@@ -170,6 +170,16 @@ function quickSearch(q){
  const match=rows.find(r=>r.innerText.toLowerCase().includes(q));
  if(match){showPage('clients',document.querySelectorAll('.nav button')[1]);match.scrollIntoView({behavior:'smooth',block:'center'});}
 }
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const SUPABASE_URL = "YOUR_SUPABASE_URL";
+const SUPABASE_KEY = "YOUR_SUPABASE_PUBLISHABLE_KEY";
+
+const supabaseClient = supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
 </script>
 </body>
 </html>
