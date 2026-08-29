@@ -180,6 +180,23 @@ const supabaseClient = supabase.createClient(
     SUPABASE_URL,
     SUPABASE_KEY
 );
+<script>
+async function testDatabase() {
+    const { data, error } = await supabaseClient
+        .from("clients")
+        .select("*");
+
+    if (error) {
+        console.error("Database error:", error);
+        alert("Database connection failed");
+        return;
+    }
+
+    console.log("Clients:", data);
+    alert("Connected! Found " + data.length + " clients.");
+}
+
+testDatabase();
 </script>
 </body>
 </html>
